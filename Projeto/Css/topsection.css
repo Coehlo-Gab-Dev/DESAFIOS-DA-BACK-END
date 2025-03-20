@@ -1,6 +1,6 @@
 .principal-topo {
   position: relative; /* Permite que o ::before seja posicionado corretamente */
-  background-image: url(/Projeto/Imagens/Coding\ 5.png);
+  background-image: url(/DESAFIOS-DA-BACK-END/Projeto/Imagens/Coding\ 5.png);
   background-color: black;
   background-size: contain;
   background-position: center;
