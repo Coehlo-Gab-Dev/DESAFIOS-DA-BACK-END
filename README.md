@@ -1,0 +1,2 @@
+Este repositótio apresenta o esboço do processo de inscrição para o Programa de Formação em Tecnologia, promovido pelo Governo do Estado do Maranhão. Ele inclui a descrição dos objetivos, problemas a serem resolvidos, público-alvo, principais funcionalidades e fluxo lógico do processo de inscrição.
+O objetivo é garantir eficiência, transparência e acessibilidade ao gerenciamento das inscrições, bem como a automação dos processos seletivos e a gestão segura das informações dos candidatos.
