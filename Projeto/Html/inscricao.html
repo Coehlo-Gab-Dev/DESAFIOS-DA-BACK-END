@@ -84,6 +84,7 @@
 
           <label for="email">E-mail</label>
           <input type="email" id="email" name="email" required />
+          <p id="mensagemErro" style="color: red;display: none;">Por Favor insira um e-mail válido !</p>
 
           <label for="telefone">Telefone</label>
           <input type="tel" id="telefone" name="telefone" required />
@@ -254,7 +255,7 @@
         </div>
         <div class="termo">
           <label class="termo-container">
-            <input type="checkbox" name="termo" id="termo" />
+            <input type="checkbox" name="termo" id="termo" class="termo-assing" />
             <div class="termo-txt">
               Declaro que li e concordo com os
               <span class="destaque">Termos e Condições</span> <br />e com a

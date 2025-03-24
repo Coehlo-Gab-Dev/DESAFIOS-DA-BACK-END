@@ -81,12 +81,28 @@ document.addEventListener("DOMContentLoaded", function () {
     );
     const trilhasSelecionadas =
       document.querySelectorAll(".trilha-checkbox:checked").length > 0;
+    
+    const termoAssinado = 
+      document.querySelectorAll(".termo-assing:checked").length >0;
 
     const todosPreenchidos = Array.from(camposObrigatorios).every(
       (campo) => campo.value.trim() !== ""
     );
-    const valido = todosPreenchidos && trilhasSelecionadas;
+    document.getElementById("email").addEventListener("input",function(){
+      const email = this.value;
+      const mensagemErro = document.getElementById("mensagemErro");
+      if (email && !validarEmail(email)){
+        mensagemErro.style.display ="block";
+      }else{
+        mensagemErro.style.display ="none";
+      }
+    });
+    function validarEmail(email){
+      const regex = /^[^|s@]+@[^\s@]+\.[^\s@]+$/;
+      return regex.test(email);
+    }
 
+    const valido = todosPreenchidos && trilhasSelecionadas && termoAssinado ;
     btnInscricao.disabled = !valido; // Ativa ou desativa o botão de inscrição
     return valido;
   }
