@@ -88,21 +88,25 @@ document.addEventListener("DOMContentLoaded", function () {
     const todosPreenchidos = Array.from(camposObrigatorios).every(
       (campo) => campo.value.trim() !== ""
     );
-    document.getElementById("email").addEventListener("input",function(){
-      const email = this.value;
-      const mensagemErro = document.getElementById("mensagemErro");
-      if (email && !validarEmail(email)){
-        mensagemErro.style.display ="block";
-      }else{
-        mensagemErro.style.display ="none";
+    
+    function validarEmail() {
+      const emailInput = document.getElementById("email");
+      const erroSpan = document.getElementById("erroEmail");
+      const regexEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    
+      if (!regexEmail.test(emailInput.value)) {
+        erroSpan.textContent = "E-mail inválido!";
+        return false;
+      } else {
+        erroSpan.textContent = "";
+        return true;
       }
-    });
-    function validarEmail(email){
-      const regex = /^[^|s@]+@[^\s@]+\.[^\s@]+$/;
-      return regex.test(email);
     }
+    
+    document.getElementById("email").addEventListener("input", validarEmail);
+    
 
-    const valido = todosPreenchidos && trilhasSelecionadas && termoAssinado ;
+    const valido = todosPreenchidos && trilhasSelecionadas && termoAssinado && validarEmail ;
     btnInscricao.disabled = !valido; // Ativa ou desativa o botão de inscrição
     return valido;
   }
